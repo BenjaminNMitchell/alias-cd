@@ -1,2 +1,2 @@
 # alias-cd
-A command line too to alias directories
+A command line tool to alias directories
