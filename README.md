@@ -38,12 +38,15 @@ The following is an example configuration file. Which you can drop into `~/.conf
 
 ## Usage
 ```
-# navigate to the docs directory
-alias_cd docs
+# get the full path for the given alias
+alias_cd get docs
 
 # display the version of the tool
 alias_cd version
 
 # validate that all directories exist
 alias_cd validate
+
+# list all aliases
+alias_cd list
 ```
