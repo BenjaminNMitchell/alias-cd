@@ -1,15 +1,16 @@
 # alias-cd
 This tool is meant to help developers create aliases for directories on their local machines. It is configured through a simple yaml file.
 
+![code style](https://img.shields.io/badge/code%20style-black-000000.svg)
+
 ## Install
 Neither of these are implimented yet...
-TODO host this on PyPI
-TODO make it work with brew or pipx?
+- TODO host this on PyPI
 ```bash
 # With pipbased tools
 pip install alias-cd
 ```
-
+- TODO make it work with brew or pipx?
 ```bash
 # homebrew
 brew install alias-cd
