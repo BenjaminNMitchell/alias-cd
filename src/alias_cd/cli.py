@@ -1,9 +1,8 @@
-"""The alias_cd CLI tool."""
+"""This module defines the CLI for alias_cd."""
 
 import os
 
 import typer
-from typer import colors
 
 import alias_cd
 from alias_cd import config
@@ -15,6 +14,8 @@ DEFAULT_LABEL = "<DEFAULT>"
 
 @app.command()
 def get(name: str):
+    """Display the directory for the given directory."""
+
     if name in CONFIG.aliases:
         typer.echo(os.path.expanduser(CONFIG.aliases[name]))
     else:
@@ -25,6 +26,7 @@ def get(name: str):
 @app.command()
 def version():
     """Display the version of the CLI."""
+
     typer.echo(alias_cd.__version__)
 
 
@@ -68,10 +70,7 @@ def validate():
 
 
 @app.callback()
-def global_init(config_path: str = None):
-    """
-    Manage users in the awesome CLI app.
-    """
+def _global_init(config_path: str = None):
 
     try:
         global CONFIG
