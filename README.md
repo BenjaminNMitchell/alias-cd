@@ -1,7 +1,9 @@
 # alias-cd
 This tool is meant to help developers create aliases for directories on their local machines. It is configured through a simple yaml file.
 
+![Tests](https://github.com/BenjaminNMitchell/alias-cd/actions/workflows/tests.yml/badge.svg)
 ![code style](https://img.shields.io/badge/code%20style-black-000000.svg)
+
 
 ## Install
 Neither of these are implimented yet...
