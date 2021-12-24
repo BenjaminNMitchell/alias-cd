@@ -1,4 +1,4 @@
-"""This module contains the configuration parsing logic."""
+"""This module contains the logic to interact with the alias_cd configuration file."""
 
 from dataclasses import dataclass
 from typing import Dict
@@ -15,11 +15,23 @@ DEFAULT_CONFIG_PATH = os.path.join(
 
 @dataclass
 class Config:
+    """This config contains the alias_cd configuration information."""
+
     aliases: Dict[str, str]
 
+    def get_directory(self, alias: str) -> str:
+        """Return the directory for a given alias."""
 
-def _load_config(config_path: str = None):
-    """Parse the configuration file from the supplied"""
+        return os.path.expanduser(self.aliases[alias])
+
+    def has_aias(self, alias: str) -> bool:
+        """Check if the supplied alias is contained in the config."""
+
+        return alias in self.aliases
+
+
+def load_config(config_path: str = None) -> Config:
+    """Parse the configuration file from the supplied config_path."""
 
     if config_path is None:
         config_path = DEFAULT_CONFIG_PATH
@@ -42,8 +54,8 @@ def _load_yaml(data):
     return yaml.safe_load(data)
 
 
-def _get_aliases(config_yaml: Dict, base_path="") -> Config:
-    """Depth first search for aliases"""
+def _get_aliases(config_yaml: Dict, base_path="") -> Dict[str, str]:
+    """Depth first search for aliases."""
 
     aliases = {}
 
@@ -52,6 +64,8 @@ def _get_aliases(config_yaml: Dict, base_path="") -> Config:
 
     for key, value in config_yaml.items():
         if key != ALIAS_KEY:
-            aliases.update(_get_aliases(value, base_path=os.path.join(base_path, key)))
+            als = _get_aliases(value, base_path=os.path.join(base_path, key))
+            if als:
+                aliases.update(als)
 
     return aliases
