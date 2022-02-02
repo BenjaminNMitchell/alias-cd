@@ -4,6 +4,7 @@ This tool is meant to help developers create aliases for directories on their lo
 [![PyPI Version][pypi-image]][pypi-url]
 [![Tests][results-image]][results-url]
 [![Code Coverage][coverage-image]][coverage-url]
+[![code style][code-style-image]][code-style-url]
 
 ## Quick Start
 ### Install
@@ -63,3 +64,5 @@ godir <alias>
 [build-url]: https://github.com/BenjaminNMitchell/alias-cd-py/actions/workflows/build.yml
 [coverage-image]: https://codecov.io/gh/BenjaminNMitchell/alias-cd-py/branch/main/graph/badge.svg
 [coverage-url]: https://codecov.io/gh/BenjaminNMitchell/alias-cd-py
+[code-style-image]: https://img.shields.io/badge/code%20style-black-000000.svg
+[code-style-url]: https://github.com/psf/black
