@@ -1,9 +1,10 @@
 # alias-cd
 This tool is meant to help developers create aliases for directories on their local machines. It is configured through a simple yaml file.
 
-![Tests](https://github.com/BenjaminNMitchell/alias-cd/actions/workflows/tests.yml/badge.svg)
-![code style](https://img.shields.io/badge/code%20style-black-000000.svg)
-![Latest Version](https://pypip.in/version/alias-cd/badge.svg)
+[![PyPI Version][pypi-image]][pypi-url]
+[![Tests][results-image]][results-url]
+[![Code Coverage][coverage-image]][coverage-url]
+[![code style][code-style-image]][code-style-url]
 
 ## Quick Start
 ### Install
@@ -53,3 +54,15 @@ The primary usecase for this application is to move to a new directory by it's a
 ```
 godir <alias>
 ```
+
+<!-- Badges -->
+[pypi-image]: https://img.shields.io/pypi/v/alias-cd
+[pypi-url]: https://pypi.org/project/alias-cd/
+[results-image]: https://github.com/BenjaminNMitchell/alias-cd/actions/workflows/tests.yml/badge.svg
+[results-url]: https://github.com/BenjaminNMitchell/alias-cd/actions/workflows/tests.yml
+[build-image]: https://github.com/BenjaminNMitchell/alias-cd-py/actions/workflows/build.yml/badge.svg
+[build-url]: https://github.com/BenjaminNMitchell/alias-cd-py/actions/workflows/build.yml
+[coverage-image]: https://codecov.io/gh/BenjaminNMitchell/alias-cd-py/branch/main/graph/badge.svg
+[coverage-url]: https://codecov.io/gh/BenjaminNMitchell/alias-cd-py
+[code-style-image]: https://img.shields.io/badge/code%20style-black-000000.svg
+[code-style-url]: https://github.com/psf/black
