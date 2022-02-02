@@ -3,22 +3,24 @@ This tool is meant to help developers create aliases for directories on their lo
 
 ![Tests](https://github.com/BenjaminNMitchell/alias-cd/actions/workflows/tests.yml/badge.svg)
 ![code style](https://img.shields.io/badge/code%20style-black-000000.svg)
+![Latest Version](https://pypip.in/version/alias-cd/badge.svg)
 
-
-## Install
-Neither of these are implimented yet...
-- TODO host this on PyPI
+## Quick Start
+### Install
+You can install directly with pip
 ```bash
-# With pipbased tools
 pip install alias-cd
 ```
-- TODO make it work with brew or pipx?
+
+However we recommend installing with [pipx](https://github.com/pypa/pipx) to keep this tool isolated
 ```bash
-# homebrew
-brew install alias-cd
+brew install pipx
+pipx install alias-cd
 ```
 
-## Configure
+Copy this [bash function](bin/godir.sh) into your `~/.bash_profile` or `~/.zshrc`
+
+### Configure
 The following is an example configuration file. Which you can drop into `~/.config/alias_cd`
 ```yaml
 ---
@@ -39,17 +41,15 @@ The following is an example configuration file. Which you can drop into `~/.conf
           _alias: work
 ```
 
-## Usage
+## Components
+### alias-cd
+This is a python CLI tool which interacts with the config file
+
+#### Usage
+### godir
+The primary usecase for this application is to move to a new directory by it's alias. This cannot be done in the python tool. You would need to run the following: `cd $(alias-cd get <alias>)`. For convenience we provide a bash function [godir](bin/godir.sh) which simplifies this and handles errors.
+
+#### Usage
 ```
-# get the full path for the given alias
-alias_cd get docs
-
-# display the version of the tool
-alias_cd version
-
-# validate that all directories exist
-alias_cd validate
-
-# list all aliases
-alias_cd list
+godir <alias>
 ```
